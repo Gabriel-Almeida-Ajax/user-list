@@ -5,6 +5,6 @@ type LoopRenderProps = {
   users?: User[];
 };
 
-export function LoopRender({ users = [], render }: LoopRenderProps) {
+export function UserLoopRender({ users = [], render }: LoopRenderProps) {
   return <>{users.map(render)}</>;
 }
