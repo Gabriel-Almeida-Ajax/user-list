@@ -6,18 +6,18 @@ export type ImageProps = React.DetailedHTMLProps<
 >;
 
 export function Img(props: ImageProps) {
-  return <img {...props} />;
+  return <img loading="lazy" {...props} />;
 }
 
-export function UserImage(user: User){
-    return <Img key={user.id} src={user.image} alt={user.username} />
+export function UserImage(user: User) {
+  return <Img key={user.id} src={user.image} alt={user.username} />;
 }
 
 type LoopUserImageProps = {
-  render: (user: User) => JSX.Element
-  users?: User[]
-}
+  render: (user: User) => JSX.Element;
+  users?: User[];
+};
 
-export function LoopUserImage({ users = [], render }: LoopUserImageProps){
-  return users.map(render)
+export function LoopUserImage({ users = [], render }: LoopUserImageProps) {
+  return users.map(render);
 }
