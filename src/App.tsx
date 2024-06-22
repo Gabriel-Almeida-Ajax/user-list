@@ -1,9 +1,9 @@
-import { UserList } from "./pages/user-list"
+import { UserList } from "./pages/user-list";
+
+import "./style/tailwind.css";
 
 function App() {
-  return (
-    <UserList />
-  )
+  return <UserList />;
 }
 
-export default App
+export default App;
