@@ -4,7 +4,7 @@ import "./style/tailwind.css";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center overflow-y-hidden">
       <UserList />;
     </div>
   );
