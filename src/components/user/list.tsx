@@ -1,19 +1,12 @@
-import { useFormContext } from "react-hook-form";
 import { UserLoopRender } from "./loop-render";
 import { UserCard } from "./card";
-import { GetUserList, GetUserListFiltering, service } from "../../services/user";
-import { FILTERING_GET_USER_LIST } from "../../services/user/get-user-list-filtering";
+import { useUserList } from "./hook/list";
 
 export function UserList() {
-  const filtering = useFormContext().watch(FILTERING_GET_USER_LIST);
-  const { data: allData, isLoading: allLoading } = GetUserList(service);
-  const { data, isLoading } = GetUserListFiltering(service);
-
-  if (isLoading || allLoading) return <p>Carregando conteúdo...</p>;
-
+  const { users, isLoading } = useUserList();
   const marginTop = "72px";
 
-  const users = filtering ? data : allData;
+  if (isLoading) return <p>Carregando conteúdo...</p>;
 
   return (
     <div
